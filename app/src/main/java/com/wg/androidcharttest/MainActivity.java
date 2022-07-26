@@ -2,6 +2,7 @@ package com.wg.androidcharttest;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
             actionBar.hide();
