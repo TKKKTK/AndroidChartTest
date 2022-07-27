@@ -150,9 +150,9 @@ public class LineChartUtil {
         lineChart.invalidate();
     }
 
-    public void UpdateData(){
+    public void UpdateData(List<Integer> datas){
          Random random = new Random();
-         for (int i = 0; i<10;i++){
+         for (int i = 0; i<datas.size();i++){
              dataList.remove(0);
              XLabel.remove(0);
          }
@@ -160,8 +160,8 @@ public class LineChartUtil {
              Entry entry = dataList.get(i);
              dataList.set(i,new Entry(i,entry.getY()));
          }
-         for (int i = 0; i<10;i++){
-             Entry entry = new Entry(dataList.size(),random.nextInt(20000)-10000);
+         for (int i = 0; i<datas.size();i++){
+             Entry entry = new Entry(dataList.size(),datas.get(i));
              dataList.add(entry);
              //更新x轴标签的数据
              XLabel.add(new SimpleDateFormat("HH:mm:ss:SS").format(new Date().getTime()));
